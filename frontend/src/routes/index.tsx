@@ -19,6 +19,7 @@ const AdminPosts = lazy(() => import("../pages/admin-posts"))
 const AdminUsers = lazy(() => import("../pages/admin-users"))
 const AdminReviews = lazy(() => import("../pages/admin-reviews"))
 const AdminNotification = lazy(() => import("../pages/admin-notification"))
+const AdminProfile = lazy(() => import("../pages/admin-profile"))
 const Notifications = lazy(() => import("../pages/Notification"))
 const UserProfile = lazy(() => import("../pages/UserProfile"))
 
@@ -113,6 +114,14 @@ export default function Router() {
             element={
               <RequireAuth roles={["ADMIN"]}>
                 <AdminReviews />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/admin-profile"
+            element={
+              <RequireAuth roles={["ADMIN"]}>
+                <AdminProfile />
               </RequireAuth>
             }
           />

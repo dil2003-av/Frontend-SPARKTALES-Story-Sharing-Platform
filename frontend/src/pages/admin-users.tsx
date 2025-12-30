@@ -249,9 +249,12 @@ const AdminUsers: React.FC = () => {
           </button>
 
           <button
-            className={`w-full flex items-center gap-3 p-3 rounded-xl hover:bg-purple-50 text-gray-700 transition ${
-              !sidebarOpen && "justify-center"
-            }`}
+            onClick={() => navigate("/admin-profile")}
+            className={`w-full flex items-center gap-3 p-3 rounded-xl transition ${
+              location.pathname === "/admin-profile"
+                ? "bg-linear-to-r from-purple-600 to-pink-600 text-white"
+                : "bg-white text-gray-700 hover:bg-purple-50"
+            } ${!sidebarOpen && "justify-center"}`}
           >
             <UserCheck className="w-5 h-5" />
             {sidebarOpen && <span>Profile</span>}
