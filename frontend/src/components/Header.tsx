@@ -95,18 +95,7 @@ export default function Header() {
                     <PenTool className="w-4 h-4 text-gray-600" />
                     Notifications
                   </Link>
-
-                  {/* {user?.roles?.includes("ADMIN") && (
-                    <Link
-                      to="/admin-dashboard"
-                      className="flex items-center gap-3 px-4 py-3 hover:bg-purple-50"
-                      onClick={() => setProfileDropdownOpen(false)}
-                    >
-                      <PenTool className="w-4 h-4 text-gray-600" />
-                      Admin Dashboard
-                    </Link>
-                  )} */}
-
+                  
                   <div className="border-t my-2" />
 
                   <button
@@ -179,6 +168,7 @@ export default function Header() {
                 <Link to="/create" onClick={() => setMobileMenuOpen(false)} className="w-full px-4 py-3 rounded-xl bg-white border border-gray-100 text-gray-800 font-medium shadow-sm">Creative</Link>
                 <Link to="/read" onClick={() => setMobileMenuOpen(false)} className="w-full px-4 py-3 rounded-xl bg-white border border-gray-100 text-gray-800 font-medium shadow-sm">Read & Fun</Link>
                 <Link to="/reviews" onClick={() => setMobileMenuOpen(false)} className="w-full px-4 py-3 rounded-xl bg-white border border-gray-100 text-gray-800 font-medium shadow-sm">Reviews</Link>
+                <Link to="/profile" onClick={() => setMobileMenuOpen(false)} className="w-full px-4 py-3 rounded-xl bg-white border border-gray-100 text-gray-800 font-medium shadow-sm">Profile</Link>
                 <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="w-full px-4 py-3 rounded-xl bg-white border border-gray-100 text-gray-800 font-medium shadow-sm">Contact Us</Link>
               </nav>
 

@@ -20,6 +20,7 @@ const AdminUsers = lazy(() => import("../pages/admin-users"))
 const AdminReviews = lazy(() => import("../pages/admin-reviews"))
 const AdminNotification = lazy(() => import("../pages/admin-notification"))
 const Notifications = lazy(() => import("../pages/Notification"))
+const UserProfile = lazy(() => import("../pages/UserProfile"))
 
 
 type RequireAuthTypes = { children: ReactNode; roles?: string[] }
@@ -127,6 +128,7 @@ export default function Router() {
             <Route path="/create" element={<CreatePage />} />
             <Route path="/read" element={<ReadFunPage />} />
             <Route path="/reviews" element={<Reviews />} />
+            <Route path="/profile" element={<UserProfile />} />
             
             <Route
               path="/my-post"
