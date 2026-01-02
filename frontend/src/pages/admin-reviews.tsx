@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import Swal from "sweetalert2";
 import { useAuth } from "../context/authContext";
-import { getAllReviews, deleteReview, approveReview, declineReview, type Review, type ReviewWithPostTitle } from "../services/admin-reviews";
+import { getAllReviews, deleteReview, approveReview, declineReview, type ReviewWithPostTitle } from "../services/admin-reviews";
 
 const AdminReviews: React.FC = () => {
   const navigate = useNavigate();
