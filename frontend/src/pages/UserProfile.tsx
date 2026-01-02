@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import {
   Sparkles,
-  Mail,
   Shield,
   Calendar,
   User,

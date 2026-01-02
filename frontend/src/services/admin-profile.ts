@@ -1,6 +1,6 @@
 import { getMyDetails } from "./auth";
 import api from "./api";
-import { getMyPosts, type Post } from "./posts";
+import { type Post } from "./posts";
 
 export type AdminProfile = {
   firstname?: string;

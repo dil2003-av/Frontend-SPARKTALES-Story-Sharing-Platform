@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Bell, CheckCircle, XCircle, Info, Trash2, Sparkles, Check } from "lucide-react";
+import { Bell, CheckCircle, XCircle, Info, Trash2, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";

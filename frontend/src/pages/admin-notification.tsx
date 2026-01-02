@@ -24,17 +24,8 @@ import {
   getAllNotificationsAdmin,
   markAsReadAdmin,
   deleteNotificationAdmin,
-  type Notification,
-} from "../services/notification";
-
-interface AdminNotification extends Notification {
-  user?: {
-    email?: string;
-    firstname?: string;
-    lastname?: string;
-  };
-  isRead?: boolean;
-}
+  type AdminNotification,
+} from "../services/admin-notification";
 
 const AdminNotification: React.FC = () => {
   const navigate = useNavigate();

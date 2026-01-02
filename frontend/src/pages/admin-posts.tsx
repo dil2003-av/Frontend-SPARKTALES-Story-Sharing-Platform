@@ -18,23 +18,7 @@ import {
 } from "lucide-react";
 import Swal from "sweetalert2";
 import { useAuth } from "../context/authContext";
-import { getAllPosts, approvePost, declinePost } from "../services/admin-dashboard";
-
-interface AdminUser {
-  firstname?: string;
-  lastname?: string;
-  email?: string;
-}
-
-interface AdminPost {
-  _id: string;
-  title: string;
-  category: string;
-  status: "PENDING" | "APPROVED" | "DECLINED";
-  createdAt: string;
-  admin?: AdminUser;
-  image?: string;
-}
+import { getAllPosts, approvePost, declinePost, type AdminPost } from "../services/admin-posts";
 
 const AdminPosts: React.FC = () => {
   const navigate = useNavigate();

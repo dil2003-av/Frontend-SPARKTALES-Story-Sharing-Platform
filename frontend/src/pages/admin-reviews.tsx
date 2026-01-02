@@ -20,12 +20,7 @@ import {
 } from "lucide-react";
 import Swal from "sweetalert2";
 import { useAuth } from "../context/authContext";
-import { getAllReviews, deleteReview, approveReview, declineReview, type Review } from "../services/reviews";
-
-interface ReviewWithPostTitle extends Review {
-  post: any; // populated with title/category in backend
-  status?: "PENDING" | "APPROVED" | "DECLINED";
-}
+import { getAllReviews, deleteReview, approveReview, declineReview, type Review, type ReviewWithPostTitle } from "../services/admin-reviews";
 
 const AdminReviews: React.FC = () => {
   const navigate = useNavigate();
@@ -38,7 +33,7 @@ const AdminReviews: React.FC = () => {
   const [limit] = useState(20);
   const [searchTerm, setSearchTerm] = useState("");
   const [ratingFilter, setRatingFilter] = useState<string>("all");
-  // Inline edit removed; using SweetAlert modal instead
+ 
 
   useEffect(() => {
     if (user && !user.roles?.includes("ADMIN")) {
