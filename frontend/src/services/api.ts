@@ -5,7 +5,9 @@ import axios, { AxiosError } from "axios"
 import { refreshTokens } from "./auth"
 
 const api = axios.create({
-  baseURL: (import.meta as any).env?.VITE_API_BASE || "https://backend-sparktales-story-sharing-pl-sigma.vercel.app/api/v1"
+  baseURL: (import.meta as any).env?.VITE_API_BASE || "https://backend-sparktales-story-sharing-pl-sigma.vercel.app/api/v1" 
+  // http://localhost:5000/api/v1
+  // https://backend-sparktales-story-sharing-pl-sigma.vercel.app
 })
 
 const PUBLIC_ENDPOINTS = ["/auth/login", "/auth/register"]
