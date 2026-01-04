@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { register } from "../services/auth";
 import Swal from "sweetalert2";
 
 const Register: React.FC = () => {
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -13,38 +15,40 @@ const Register: React.FC = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setError(null)
-    setLoading(true)
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+  setError(null)
+  setLoading(true)
 
-    try {
-      const payload = {
-        firstname: firstName,
-        lastname: lastName,
-        email,
-        password
-      }
-
-      const res = await register(payload)
-
-      await Swal.fire({
-        icon: "success",
-        title: "Registration successful",
-        text: res?.message || "Your account has been created.",
-        confirmButtonText: "Continue to login"
-      })
-
-      // registration success -> redirect to login
-      window.location.href = "/login"
-    } catch (err: any) {
-      console.error(err)
-      const message = err?.response?.data?.message || err?.message || "Registration failed"
-      setError(message)
-    } finally {
-      setLoading(false)
+  try {
+    const payload = {
+      firstname: firstName,
+      lastname: lastName,
+      email,
+      password
     }
+
+    const res = await register(payload)
+
+    await Swal.fire({
+      icon: "success",
+      title: "Registration successful",
+      text: res?.message || "Your account has been created.",
+      confirmButtonText: "Continue to login"
+    })
+
+    // ✅ Redirect using React Router
+  navigate("/login")
+
+  } catch (err: any) {
+    console.error(err)
+    const message = err?.response?.data?.message || err?.message || "Registration failed"
+    setError(message)
+  } finally {
+    setLoading(false)
   }
+}
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-indigo-50 via-purple-50 to-pink-50 px-4">
