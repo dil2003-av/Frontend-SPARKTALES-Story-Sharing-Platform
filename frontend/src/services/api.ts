@@ -8,9 +8,6 @@ const api = axios.create({
   baseURL: (import.meta as any).env?.VITE_API_BASE || "https://backend-sparktales-story-sharing-pl-sigma.vercel.app/api/v1"
 })
 
-// An interceptor is like a middleware for Axios requests and responses.
-// It lets you intercept, modify, or analyze any API request or response before it goes out or comes back.
-
 const PUBLIC_ENDPOINTS = ["/auth/login", "/auth/register"]
 
 api.interceptors.request.use((config) => {
