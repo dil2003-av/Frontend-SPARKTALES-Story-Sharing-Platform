@@ -5,7 +5,7 @@ import axios, { AxiosError } from "axios"
 import { refreshTokens } from "./auth"
 
 const api = axios.create({
-  baseURL: (import.meta as any).env?.VITE_API_BASE || "http://localhost:5000/api/v1"
+  baseURL: (import.meta as any).env?.VITE_API_BASE || "https://backend-sparktales-story-sharing-pl.vercel.app/api/v1"
 })
 
 // An interceptor is like a middleware for Axios requests and responses.
